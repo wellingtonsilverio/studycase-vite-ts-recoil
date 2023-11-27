@@ -2,10 +2,12 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { Todo as ITodo, todoListState } from "../../store/todo";
 import Button from "../../components/Button";
 
+import './Todo.css';
+
 function getInputById(id: string) {
   return document.getElementById(id) as HTMLInputElement;
 }
-function clearInput(input) {
+function clearInput(input: HTMLInputElement) {
   input.value = "";
 }
 
@@ -32,14 +34,14 @@ const Todo: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="Todo">
       <h1>Lista de afazeres</h1>
-      <div>
+      <div className="Input">
         <input id="title" /><Button onClick={handleAddTodo}>Adicionar</Button>
       </div>
       <ul>
         {todos?.map(todo => (
-          <li key={todo.key}>{todo.label} | <a onClick={() => handleRemoveTodo(todo.key)}>X</a></li>
+          <li key={todo.key}>{todo.label} <a onClick={() => handleRemoveTodo(todo.key)}>X</a></li>
         ))}
       </ul>
     </div>
