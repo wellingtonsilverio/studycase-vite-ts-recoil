@@ -1,19 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { RecoilRoot } from 'recoil';
+import { screen } from '@testing-library/react';
+import recoilRender from '../../utils/jest/recoilRender';
 
 import App from '.';
 
-const renderWithRecoil = (component: JSX.Element) => {
-  return render(
-    <RecoilRoot>
-      {component}
-    </RecoilRoot>
-  )
-}
-
 describe('App Container', () => {
   it('should display initial screen', () => {
-    renderWithRecoil(<App />);
+    recoilRender(<App />);
 
     expect(screen.getByRole('heading', { name: /vite \+ react \+ recoil/i })).toBeInTheDocument();
   });
