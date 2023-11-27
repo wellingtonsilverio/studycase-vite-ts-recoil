@@ -3,6 +3,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { countState } from '../../store/count';
 
 import './App.css';
+import Todo from '../Todo';
 
 function App() {
   const count = useRecoilValue(countState);
@@ -18,6 +19,7 @@ function App() {
       <div className="card">
         <Button onClick={handleAddCount}>count is {count}</Button>
       </div>
+      <Todo />
     </>
   );
 }
