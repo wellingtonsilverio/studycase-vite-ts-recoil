@@ -1,16 +1,22 @@
-import { useState } from 'react'
+import Button from '../../components/Button'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { countState } from '../../store/count'
 
 import './App.css'
-import Button from '../../components/Button'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useRecoilValue(countState);
+  const setCount = useSetRecoilState(countState);
+  
+  const handleAddCount = () => {
+    setCount(_count => _count + 1);
+  }
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <h1>Vite + React + Recoil</h1>
       <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
+        <Button onClick={handleAddCount}>
           count is {count}
         </Button>
       </div>
