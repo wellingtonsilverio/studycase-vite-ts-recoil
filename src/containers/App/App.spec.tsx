@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import App from './App';
+import App from '.';
 
-describe("App", () => {
+describe("App Container", () => {
     it('should display initial screen', () => {
         render(<App />);
 
