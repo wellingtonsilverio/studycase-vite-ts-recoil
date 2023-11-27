@@ -9,8 +9,17 @@
 
 ## Como rodar
 
-`yarn install`
+Instale as dependências
+```bash
+yarn install
+```
 
-`yarn test`
+Rode todos testes para garantir que tudo está funcionando corretamente
+```bash
+yarn test
+```
 
-`yarn dev`
+Rode o projeto em modo desenvolvedor, acessando pela URL http://localhost:5173/
+```bash
+yarn dev
+```
