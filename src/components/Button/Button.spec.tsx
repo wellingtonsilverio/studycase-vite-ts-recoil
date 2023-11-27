@@ -1,27 +1,27 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import Button from "./";
+import { fireEvent, render, screen } from '@testing-library/react';
+import Button from './';
 
-describe("Button Component", () => {
-    it("should render component", () => {
-        const { container } = render(<Button />);
+describe('Button Component', () => {
+  it('should render component', () => {
+    const { container } = render(<Button />);
 
-        expect(container).toMatchSnapshot();
-    });
-    
-    it("should render text in button", () => {
-        render(<Button>Hi</Button>);
+    expect(container).toMatchSnapshot();
+  });
 
-        expect(screen.getByText("Hi")).toBeInTheDocument();
-    });
-    
-    it("should onClick call function", () => {
-        const ff = jest.fn();
+  it('should render text in button', () => {
+    render(<Button>Hi</Button>);
 
-        render(<Button onClick={ff}>Hi</Button>);
+    expect(screen.getByText('Hi')).toBeInTheDocument();
+  });
 
-        const buttonRended = screen.getByRole('button');
-        fireEvent.click(buttonRended);
+  it('should onClick call function', () => {
+    const ff = jest.fn();
 
-        expect(ff).toHaveBeenCalled();
-    });
+    render(<Button onClick={ff}>Hi</Button>);
+
+    const buttonRended = screen.getByRole('button');
+    fireEvent.click(buttonRended);
+
+    expect(ff).toHaveBeenCalled();
+  });
 });

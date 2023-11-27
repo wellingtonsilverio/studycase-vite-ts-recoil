@@ -1,6 +1,6 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const countState = atom({
-    key: 'count',
-    default: 0
+  key: 'count',
+  default: 0,
 });

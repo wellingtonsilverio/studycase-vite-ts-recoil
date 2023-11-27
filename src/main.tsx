@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { RecoilRoot } from 'recoil'
-import App from './containers/App'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
+import App from './containers/App';
 
-import './index.css'
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -11,4 +11,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <App />
     </RecoilRoot>
   </React.StrictMode>,
-)
+);
